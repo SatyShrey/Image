@@ -1,6 +1,6 @@
 import { createContext, useContext, useRef, useState, type Dispatch, type ReactNode, type RefObject, type SetStateAction } from "react";
-import pic1 from "../assets/pic.png";
-import bg1 from "../assets/bg.png";
+import pic1 from "../assets/pic.jpg";
+import bg1 from "../assets/bg.jpg";
 
 export type ContextValues={
 name:string;
