@@ -5,7 +5,7 @@ import EditPage from "./Components/EditPage";
 
 export default function App() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100dvh" }}>
+    <div style={{ display: "flex", flexDirection: "column", height: "100dvh" }} className=" bg-body-secondary">
       <BrowserRouter>
           <Header />
         <Routes>
