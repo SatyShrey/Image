@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import frames from "../utils/frames";
 import { useValues } from "./Global";
 import { useState, type ChangeEvent, type Dispatch, type SetStateAction } from "react";
-import convertImage from "../assets/converter";
+import convertImage from "../utils/converter";
 
 export default function EditPage() {
     const { id } = useParams()
