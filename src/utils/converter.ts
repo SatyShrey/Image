@@ -11,7 +11,7 @@ const convertImage = (div: HTMLElement, filename: string) => {
       const blob = await response.blob();
       if (window?.showSaveFilePicker) {
         const handle = await window.showSaveFilePicker({
-          suggestedName: `${filename.replaceAll(" ", "-")}.png`,
+          suggestedName: `${filename}.png`,
           types: [{ description: "PNG", accept: { "image/png": [".png"] } }],
         });
 
@@ -22,7 +22,7 @@ const convertImage = (div: HTMLElement, filename: string) => {
         // Fallback: trigger a download
         const link = document.createElement("a");
         link.href = dataUrl;
-        link.download = `${filename.replaceAll(" ", "-")}.png`;
+        link.download = `${filename}.png`;
         link.click();
       }
 

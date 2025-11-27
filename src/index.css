@@ -1,16 +1,12 @@
+/* Apply globally */
 * {
   margin: 0;
   padding: 0;
   font-family: Poppins;
+  box-sizing: border-box;
 }
-/* Apply globally */
 ::-webkit-scrollbar {
-  width: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 6px;
+  width: 3px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -20,10 +16,13 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+/*stroke for text*/
 .stroke {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: aqua;
 }
+
+/*font weight*/
 .xbold {
   font-weight: 1000;
 }
@@ -39,12 +38,28 @@
 .thin {
   font-weight: 200;
 }
+
+dialog {
+  overflow: visible;
+  background-color: transparent;
+  border: none;
+  width: 100vw;
+  height: 100vh;
+}
+
+.loading-circle {
+  animation: loading-circle 0.5s infinite linear;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 10px ridge skyblue;
+}
+
 .pic-cover {
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  border: 1px solid;
   text-align: center;
   text-decoration: none;
   width: fit-content;
@@ -52,6 +67,7 @@
 }
 .pic-cover > div {
   scale: 1;
+  flex-shrink: 0;
 }
 .bar-0 {
   scrollbar-width: none;
@@ -62,12 +78,18 @@
 .pointer {
   cursor: pointer;
 }
+
 @media (max-width: 700px) {
   .pic-cover > div {
     scale: 0.5;
   }
   .pic-cover {
-    width: 140px;
-    height: 260px;
+    width: 175px;
+    height: 270px;
+  }
+}
+@keyframes loading-circle {
+  100%{
+    rotate: 360deg;
   }
 }
