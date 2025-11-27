@@ -4,6 +4,7 @@ import Posters from "./Components/Posters";
 import EditPage from "./Components/PreviewPage";
 import EditDialog from "./Components/EditDialog";
 import SideNav from "./Components/SideNav";
+import Capture from "./Components/Capture";
 
 export default function App() {
   return (
@@ -13,8 +14,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Posters />} />
           <Route path="/edit/:id" element={<EditPage />} />
+          <Route path="/capture/:id" element={<Capture />} />
         </Routes>
-        <SideNav/>
+        <SideNav />
         <EditDialog />
       </BrowserRouter>
     </div>

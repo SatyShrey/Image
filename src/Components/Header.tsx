@@ -18,6 +18,11 @@ export default function Header() {
         }
     }
 
+    if (location.pathname.includes("capture")) {
+        return null;
+    }
+
+
     return (
         <header className="bg-primary px-2 py-1 text-white d-flex justify-content-between align-items-center">
             <h1 className="h2">Quick Poster</h1>

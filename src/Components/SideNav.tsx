@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useValues } from "./Global";
-import { Image, PenLine, } from "lucide-react";
 
 export default function SideNav() {
   const { setnameEditOpen, settitleEditOpen,
@@ -18,15 +17,15 @@ export default function SideNav() {
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }} transition={{ duration: 0.3 }}
-            className="bg-dark d-flex flex-column border-info rounded-top-3 overflow-hidden" style={{ width: "270px", maxWidth: "100%",borderLeft:"1px solid" }}>
-            <div className="bg-info p-1">
+            className="bg-dark d-flex flex-column border-primary rounded-top-3 overflow-hidden" style={{ width: "270px", maxWidth: "100%",borderLeft:"1px solid" }}>
+            <div className="bg-primary p-1">
               <button className="btn p-2 btn-close" onClick={() => setnavOpen(false)} />
             </div>
             <nav className="flex-grow-1 d-flex gap-2 flex-column p-2">
-              <button className="btn btn-info" onClick={() => setnameEditOpen(true)}>Name<PenLine className="d-inline" size={16} /></button>
-              <button className="btn btn-info" onClick={() => settitleEditOpen(true)}>Title<PenLine className="d-inline" size={16} /></button>
-              <button className="btn btn-info" onClick={() => setmessageEditOpen(true)}>Message<PenLine className="d-inline" size={16} /></button>
-              <label className="btn btn-info" htmlFor="pic-1">Change <Image className="d-inline" size={16} /></label>
+              <button className="btn btn-info" onClick={() => setnameEditOpen(true)}>Edit Name</button>
+              <button className="btn btn-info" onClick={() => settitleEditOpen(true)}>Edit Title</button>
+              <button className="btn btn-info" onClick={() => setmessageEditOpen(true)}>Edit Message</button>
+              <label className="btn btn-info" htmlFor="pic-1">Change Photo</label>
             </nav>
           </motion.div>
         </motion.div>
