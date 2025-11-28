@@ -11,8 +11,8 @@ export default function Posters() {
           frames.map((Item, index) => <Link
             to={`/edit/${index}`}
             key={index}
-            className="pic-cover position-relative d-flex justify-content-center align-items-center overflow-hidden text-center text-decoration-none"
-          ><Item /> <div className=" position-absolute top-0 bottom-0 w-100"></div>
+            className="pic-cover d-flex justify-content-center align-items-center overflow-hidden text-center text-decoration-none"
+          ><Item />
           </Link>)
         }
       </div>
