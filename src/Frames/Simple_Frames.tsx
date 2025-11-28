@@ -49,15 +49,15 @@ export function Frame4() {
   const { image1, title, message, name } = useValues()
   return (
     <div style={{ width: "340px", background: "linear-gradient(to bottom right,pink,aqua,pink)", border: "1px solid #ffff",}} className="p-2 rounded-4 text-center">
-      <div className="text-danger fw-bold text-primary-emphasis" style={{fontSize:"30px"}}>{title}</div>
+      <div className="text-danger fw-bold text-primary-emphasis mb-2" style={{fontSize:"30px"}}>{title}</div>
       <div className=" position-relative" style={{width:"fit-content",margin:"auto"}}>
         <div style={{ width: "190px", height: "230px", margin: "auto", borderRadius: "15px", overflow: "hidden", border: "2px ridge #000000" }}>
         <img src={image1 as string} alt="pic" className="h-100" />
       </div>
-        <Flower size={30} color="rgba(255, 204, 0, 1)" className="position-absolute z-1" style={{bottom:"-5px",right:"-5px"}} />
-        <Flower size={30} color="rgba(255, 204, 0, 1)" className="position-absolute z-1" style={{top:"-5px",left:"-5px"}} />
+        <Flower size={30} color="rgba(255, 204, 0, 1)" className="position-absolute" style={{bottom:"-5px",right:"-5px"}} />
+        <Flower size={30} color="rgba(255, 204, 0, 1)" className="position-absolute" style={{top:"-5px",left:"-5px"}} />
       </div>
-      {name && <div className=" text-primary-emphasis fw-bold mt-2 fs-1 caveat">🎂{name}🎂</div>}
+      {name && <div className=" text-primary-emphasis fw-bold mt-2">🎂{name}🎂</div>}
       <div className="text-dark patrick-hand">{message}</div>
     </div>
   )
