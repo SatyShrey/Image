@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom";
-import frames from "../utils/frames";
 import { useValues } from "./Global";
 import convertImage from "../utils/converter";
 import ErrorScreen from "./ErrorScreen";
 import { useState } from "react";
 import LoadingScreen from "./LoadingScreen";
+import * as SimpleFrames from "../Frames/Simple_Frames";
+
+const frames = Object.values(SimpleFrames);
 
 export default function EditPage() {
     const { id } = useParams()
