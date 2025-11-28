@@ -1,10 +1,10 @@
 import html2canvas from "html2canvas";
 
-const convertImage = (div: HTMLElement, filename: string) => {
+const convertImage = async(div: HTMLElement, filename: string) => {
   if (!div) {
     return alert("Select a frame");
   }
-  html2canvas(div).then(async (canvas) => {
+  await html2canvas(div).then(async (canvas) => {
     try {
       const dataUrl = canvas.toDataURL("image/png");
       const response = await fetch(dataUrl);

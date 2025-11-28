@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Arimo:ital,wght@0,400..700;1,400..700&family=Caveat:wght@400..700&family=Edu+QLD+Hand:wght@400..700&family=Gochi+Hand&family=Handlee&family=Italianno&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Patrick+Hand&family=Patrick+Hand+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+.poppins {
+  font-family: "Poppins";
+}
+
+.arimo {
+  font-family: "Arimo";
+}
+
+.noto {
+  font-family: "Noto Sans";
+}
+
+.nunito {
+  font-family: "Nunito";
+}
+
+.ubuntu {
+  font-family: "Ubuntu";
+}
+
+.gochi-hand {
+  font-family: "Gochi Hand";
+}
+
+.edu-hand {
+  font-family: "Edu QLD Hand";
+}
+
+.patrick-hand {
+  font-family: "Patrick Hand SC";
+}
+
+.caveat {
+  font-family: "Caveat";
+}
+
+.italianno {
+  font-family: "Italianno";
+}

@@ -3,25 +3,36 @@ import frames from "../utils/frames";
 import { useValues } from "./Global";
 import convertImage from "../utils/converter";
 import ErrorScreen from "./ErrorScreen";
+import { useState } from "react";
+import LoadingScreen from "./LoadingScreen";
 
 export default function EditPage() {
     const { id } = useParams()
-    const Item = frames.filter(item => item.id === id)[0];
+    const Item = frames[parseInt(id as string)];
     const { divRef, name, title } = useValues();
+    const [loading, setloading] = useState(false)
 
     if (!Item) { return <ErrorScreen error="Frame not found" /> }
+    if (loading) { return <LoadingScreen text="Saving file..." type="bar" /> }
 
     return (
-        <div className="overflow-y-scroll flex-grow-1">
-            <div className="text-center my-1 mx-auto" ref={divRef} style={{ width: "fit-content" }}>
-                <Item.Component />
+        <>
+            <div className="overflow-y-scroll flex-grow-1">
+                <div className="text-center my-1 mx-auto" ref={divRef} style={{ width: "fit-content" }}>
+                    <Item />
+                </div>
             </div>
-            <div className="mx-auto my-2" style={{ width: "300px" }}>
-                <button className="btn btn-primary w-100" onClick={() => {
+            <div className="py-1 bg-primary text-center">
+                <button 
+                className="btn btn-info"
+                style={{width:"260px"}}
+                 onClick={async () => {
                     const filename = (title + "-" + name).replaceAll(' ', '-').replaceAll('.', '_');
-                    convertImage(divRef.current as HTMLElement, filename)
+                    setloading(true)
+                    await convertImage(divRef.current as HTMLElement, filename);
+                    setloading(false)
                 }}>Save Poster</button>
             </div>
-        </div>
+        </>
     )
 }

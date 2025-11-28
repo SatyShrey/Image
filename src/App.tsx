@@ -4,17 +4,17 @@ import Posters from "./Components/Posters";
 import EditPage from "./Components/PreviewPage";
 import EditDialog from "./Components/EditDialog";
 import SideNav from "./Components/SideNav";
-import Capture from "./Components/Capture";
+import BackgroundRemover from "./Components/BackgroundRemove";
 
 export default function App() {
   return (
-    <div className="d-flex flex-column bg-dark" style={{ height: "100vh" }}>
+    <div className="d-flex flex-column bg-dark overflow-hidden" style={{ height: "100dvh" }}>
       <BrowserRouter>
         <Header />
         <Routes>
           <Route path="/" element={<Posters />} />
           <Route path="/edit/:id" element={<EditPage />} />
-          <Route path="/capture/:id" element={<Capture />} />
+          <Route path="/remove-bg" element={<BackgroundRemover/>}/>
         </Routes>
         <SideNav />
         <EditDialog />

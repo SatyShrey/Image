@@ -3,8 +3,8 @@
   margin: 0;
   padding: 0;
   font-family: Poppins;
-  box-sizing: border-box;
 }
+
 ::-webkit-scrollbar {
   width: 3px;
 }
@@ -15,28 +15,6 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
-}
-/*stroke for text*/
-.stroke {
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: aqua;
-}
-
-/*font weight*/
-.xbold {
-  font-weight: 1000;
-}
-.bold {
-  font-weight: 700;
-}
-.semibold {
-  font-weight: 500;
-}
-.regular {
-  font-weight: 400;
-}
-.thin {
-  font-weight: 200;
 }
 
 dialog {
@@ -54,42 +32,40 @@ dialog {
   border-radius: 50%;
   border: 10px ridge skyblue;
 }
+.loading-bar {
+  width: 260px;
+  border-radius: 14px;
+  position: relative;
+  height: 20px;
+}
+.loading-bar span {
+  animation: loading-bar 1s linear alternate infinite;
+  width: 20px;
+  height: 20px;
+}
 
 .pic-cover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  text-align: center;
-  text-decoration: none;
   width: fit-content;
   height: fit-content;
 }
-.pic-cover > div {
-  scale: 1;
-  flex-shrink: 0;
-}
+
 .bar-0 {
   scrollbar-width: none;
 }
+
 .bar-1 {
   scrollbar-width: thin;
 }
+
 .pointer {
   cursor: pointer;
 }
 
-@media (max-width: 700px) {
-  .pic-cover > div {
-    scale: 0.5;
-  }
-  .pic-cover {
-    width: 175px;
-    height: 270px;
-  }
-}
 @keyframes loading-circle {
-  100%{
+  100% {
     rotate: 360deg;
   }
+}
+@keyframes loading-bar {
+  0%{left: 0px;}100%{left:240px;}
 }
