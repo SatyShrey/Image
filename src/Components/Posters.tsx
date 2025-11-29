@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import * as SimpleFrames from "../Frames/Simple_Frames";
-const frames = Object.values(SimpleFrames);
+import frames from "../utils/frames";
 
 export default function Posters() {
   return (

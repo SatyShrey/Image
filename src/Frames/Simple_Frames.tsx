@@ -1,17 +1,20 @@
-import { useValues } from "../Components/Global"
-import bg1 from "../assets/bg1.jpg";
-import bg2 from "../assets/bg2.png";
+import Background from "../Backgrounds/Background";
+import { useValues } from "../Components/Global";
+import bg1 from '../assets/bg1.jpg';
 
 export function Frame1() {
   const { image1, title, message, name, } = useValues()
   return (
-    <div style={{ width: "340px", backgroundImage: `url(${bg1})`, backgroundSize: "cover" }} className="p-4 pt-0 border boder-1">
-      <div style={{ fontSize: "43px", WebkitTextStrokeColor: "#000000", WebkitTextStrokeWidth: "1px" }} className="fw-bolder text-warning" >{title}</div>
-      <div className="rounded-circle overflow-hidden mb-2" style={{ width: "200px", height: "200px", margin: "auto", border: "2px ridge skyblue" }}>
+    <div
+      style={{ width: "340px", background: `url(${bg1})`,backgroundSize:"cover" }}
+      className="p-4 pt-0 border boder-1 position-relative">
+      <div style={{ fontSize: "43px", WebkitTextStrokeColor: "white", WebkitTextStrokeWidth: "1px", fontWeight: "900" }} className="text-warning position-relative">{title}</div>
+      <div className="rounded-circle overflow-hidden mb-1 position-relative" style={{ width: "210px", height: "210px", margin: "auto", border: "2px ridge skyblue" }}>
         <img src={image1 as string} alt="pic" className="w-100" />
       </div>
-      {name && <div className="fw-bolder fs-2 text-info">{name}</div>}
-      <div className="text-warning" style={{ fontSize: "small" }}>{message}</div>
+      {name && <div className="fw-bolder fs-2 text-info position-relative"
+      >{name}</div>}
+      <div className="text-white position-relative" style={{ fontSize: "small" }}>{message}</div>
     </div>
   )
 }
@@ -20,8 +23,9 @@ export function Frame2() {
   const { image1, title, message, name } = useValues()
   return (
     <div className="border border-warning text-center text-black p-3 pt-0 position-relative"
-      style={{ width: "340px", backgroundImage: `url(${bg2})`, backgroundSize: "cover" }}>
-      <div className=" position-absolute top-50 bottom-0 end-0 start-0" style={{ background: "linear-gradient(transparent,pink)" }}></div>
+      style={{ width: "340px",backgroundColor:"pink" }}>
+      <Background type="heart" length={30} background="linear-gradient(transparent,skyblue)" />
+      
       <div className="text-info fw-bolder text-center position-relative" style={{ fontSize: "40px", textShadow: "0px 0px 3px black" }}>{title}</div>
       <div className="mb-1 border position-relative border-warning overflow-hidden mx-auto bg-black" style={{ width: "210px", height: "260px" }} >
         <img src={image1 as string} alt="pic" className="w-100" />
@@ -76,10 +80,10 @@ export function Frame5() {
         <div className="h-50 bg-white rounded-top-circle"></div>
       </div>
       <div className="fw-bold gochi-hand mb-1" style={{ fontSize: "35px" }}>{title}</div>
-      <div className="position-relative mx-auto rounded-circle p-1" style={{ width: "220px", height: "220px", background: "linear-gradient(to right,black,blue)" }}>
+      <div className="position-relative mx-auto rounded-circle p-1" style={{ width: "260px", height: "260px", background: "linear-gradient(to right,black,blue)" }}>
         <div className="rounded-circle w-100 h-100 overflow-hidden">
-          <span className=" position-absolute fs-1" style={{ top: 0, left: "-20px" }}>✨</span>
-          <span className=" position-absolute fs-1" style={{ top: "50%", right: "-40px" }}>✨</span>
+          <span className=" position-absolute fs-1" style={{ top: 0, left: "-10px" }}>✨</span>
+          <span className=" position-absolute fs-1" style={{ top: "50%", right: "-30px" }}>✨</span>
           <img src={image1 as string} alt="image" className="w-100" />
           <div className=" position-absolute d-flex justify-content-center w-100 p-1 pb-4 fw-semibold" style={{ background: "linear-gradient(#d0dbe1,white)", left: 0, bottom: "-20px" }}>{name}</div>
         </div>
