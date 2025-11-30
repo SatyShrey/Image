@@ -24,7 +24,7 @@ export default function EditPage() {
             </div>
             <div className="py-1 bg-primary text-center">
                 <button 
-                className="btn btn-info"
+                className="btn btn-info fw-bold p-2"
                 style={{width:"260px"}}
                  onClick={async () => {
                     const filename = (title + "-" + name).replaceAll(' ', '-').replaceAll('.', '_');

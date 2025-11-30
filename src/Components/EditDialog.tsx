@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { useValues } from "./Global"
 import type { ReactNode } from "react";
 
-function Container({ children, value }: { children: ReactNode, value: boolean }) {
+function Container({ children, value,header }: { children: ReactNode, value: boolean,header:string }) {
     const { setnameEditOpen, settitleEditOpen, setmessageEditOpen, setnavOpen } = useValues();
     return <AnimatePresence>
         {value && <dialog open >
@@ -17,6 +17,7 @@ function Container({ children, value }: { children: ReactNode, value: boolean })
                     animate={{ y: "0%" }}
                     exit={{ y: "-100%" }}
                     className="bg-white rounded p-2 mx-auto" style={{ width: "400px", maxWidth: "100%" }}>
+                    <h6>Edit {header}</h6>
                     {children}
                     <div className="d-flex justify-content-end">
                         <button className="btn btn-primary" onClick={() => {
@@ -37,14 +38,14 @@ export default function EditDialog() {
 
     return (
         <>
-            <Container value={nameEditOpen}>
-                <input type="text" name="name" value={name} onChange={(e) => setname(e.target.value)} placeholder="Name" className="px-2 w-100 mb-1 border-0 rounded-2" style={{outline:"none",height:"45px",boxShadow:"0 0 2px"}} />
+            <Container value={nameEditOpen} header="Header">
+                <input type="text" name="name" value={name} onChange={(e) => setname(e.target.value)} placeholder="Name" className="px-2 w-100 mb-2 rounded-2 focus-ring focus-ring-primary" style={{height:"45px",borderColor:"skyblue"}} />
             </Container>
-            <Container value={titleEditOpen}>
-                <input type="text" name="name" value={title} onChange={(e) => settitle(e.target.value)} placeholder="Tittle" className="px-2 w-100 mb-1 border-0 rounded-2" style={{outline:"none",height:"45px",boxShadow:"0 0 2px"}}/>
+            <Container value={titleEditOpen} header="Name">
+                <input type="text" name="name" value={title} onChange={(e) => settitle(e.target.value)} placeholder="Header" className="px-2 w-100 mb-2 rounded-2 focus-ring focus-ring-primary" style={{height:"45px",borderColor:"skyblue"}}/>
             </Container>
-            <Container value={messageEditOpen}>
-                <textarea name="name" value={message} onChange={(e) => setmessage(e.target.value)} placeholder="Message" className="px-2 w-100 mb-1 border-0 rounded-2" style={{outline:"none",boxShadow:"0 0 2px",height: "150px"}} />
+            <Container value={messageEditOpen} header="Message">
+                <textarea name="name" value={message} onChange={(e) => setmessage(e.target.value)} placeholder="Message" className="px-2 w-100 mb-1 rounded-2 focus-ring focus-ring-primary" style={{height: "150px",borderColor:"skyblue"}} />
             </Container>
         </>
     )
