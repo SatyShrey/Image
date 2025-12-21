@@ -26,7 +26,7 @@ const Contexts = createContext<ContextValues | null>(null);
 export const Provider = ({ children }: { children: ReactNode }) => {
     const [name, setname] = useState("My Dear Friend");
     const [title, settitle] = useState("Happy Birthday");
-    const [message, setmessage] = useState("“Wish you a very happy birthday! May all your dreams come true,”");
+    const [message, setmessage] = useState(`"Wishing you endless joy, love, and cherished memories on your special day. Happy Birthday!"`);
     const [image1, setimage1] = useState<string | ArrayBuffer>(pic1);
     const divRef = useRef<HTMLDivElement>(null)
     const [nameEditOpen, setnameEditOpen] = useState<boolean>(false)

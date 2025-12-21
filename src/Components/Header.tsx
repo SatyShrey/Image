@@ -3,7 +3,7 @@ import { useValues } from "./Global"
 import { ImagePlus, Menu, PenLine, } from "lucide-react";
 
 export default function Header() {
-    const { setnameEditOpen, settitleEditOpen, setmessageEditOpen, setimage1, setnavOpen,image1 } = useValues();
+    const { setnameEditOpen, settitleEditOpen, setmessageEditOpen, setimage1,image1 } = useValues();
 
     const handleImage = (e: ChangeEvent<HTMLInputElement>, setImage: Dispatch<SetStateAction<string>>) => {
         const files = e.target.files;
@@ -39,7 +39,9 @@ export default function Header() {
                     <ImagePlus size={30}/>
                 </span>
               </label>
-            <button className="btn btn-info d-md-none" onClick={() => setnavOpen(true)}>
+            <button className="btn btn-info d-md-none" onClick={() => {
+                (document.getElementById("sidenav") as HTMLDialogElement).showModal();
+            }}>
                 <Menu />
             </button>
         </header>

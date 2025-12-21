@@ -59,8 +59,7 @@ export function Frame4() {
         <div style={{ width: "190px", height: "230px", margin: "auto", borderRadius: "15px", overflow: "hidden", border: "2px solid #000000" }}>
           <img src={image1 as string} alt="pic" className="w-100" />
         </div>
-        <span className="position-absolute rounded-4"
-          style={{ bottom: 0, right: 0, top: "40%", left: 0, background: "linear-gradient(transparent,rgba(0,0,0,0.8))" }}></span>
+        
         <span className="position-absolute fs-2" style={{ bottom: 0, right: 0 }}>🎁</span>
         <span className="position-absolute fs-2" style={{ bottom: 0, left: 0 }}>🎂</span>
         <span className="position-absolute d-flex justify-content-center" style={{ top: "-14px", right: 0, left: 0 }}>🌸🌸🌸🌸🌸</span>
@@ -79,7 +78,7 @@ export function Frame5() {
         <div className="h-50 rounded-circle" style={{ borderTop: "2px solid #f7f7f7ff" }}></div>
         <div className="h-50 bg-white rounded-top-circle"></div>
       </div>
-      <div className="fw-bold gochi-hand mb-1" style={{ fontSize: "35px" }}>{title}</div>
+      <div className="fw-bold gochi-hand mb-1 position-relative" style={{ fontSize: "35px" }}>{title}</div>
       <div className="position-relative mx-auto rounded-circle p-1" style={{ width: "260px", height: "260px", background: "linear-gradient(to right,black,blue)" }}>
         <div className="rounded-circle w-100 h-100 overflow-hidden">
           <span className=" position-absolute fs-1" style={{ top: 0, left: "-10px" }}>✨</span>
