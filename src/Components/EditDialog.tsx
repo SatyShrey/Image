@@ -38,10 +38,10 @@ export default function EditDialog() {
 
     return (
         <>
-            <Container value={nameEditOpen} header="Header">
+            <Container value={nameEditOpen} header="Name">
                 <input type="text" name="name" value={name} onChange={(e) => setname(e.target.value)} placeholder="Name" className="px-2 w-100 mb-2 rounded-2 focus-ring focus-ring-primary" style={{height:"45px",borderColor:"skyblue"}} />
             </Container>
-            <Container value={titleEditOpen} header="Name">
+            <Container value={titleEditOpen} header="Header">
                 <input type="text" name="name" value={title} onChange={(e) => settitle(e.target.value)} placeholder="Header" className="px-2 w-100 mb-2 rounded-2 focus-ring focus-ring-primary" style={{height:"45px",borderColor:"skyblue"}}/>
             </Container>
             <Container value={messageEditOpen} header="Message">
