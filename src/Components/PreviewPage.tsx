@@ -25,7 +25,7 @@ export default function EditPage() {
                 </div>
             </div>
             <div className="p-1 bg-info text-center d-flex gap-2 justify-content-between">
-                <button className="d-flex align-items-center btn" onClick={() => navigate("/")}>
+                <button className="d-flex align-items-center btn" onClick={() => navigate(-1)}>
                     <ChevronLeft />Back
                 </button>
                 <button
