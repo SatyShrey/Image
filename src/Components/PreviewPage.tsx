@@ -24,12 +24,12 @@ export default function EditPage() {
                     <Item />
                 </div>
             </div>
-            <div className="p-1 bg-primary text-center d-flex gap-2 justify-content-between">
+            <div className="p-1 bg-info text-center d-flex gap-2 justify-content-between">
                 <button className="d-flex align-items-center btn" onClick={() => navigate("/")}>
                     <ChevronLeft />Back
                 </button>
                 <button
-                    className="btn btn-info fw-bold p-2"
+                    className="btn btn-primary fw-bold p-2"
                     style={{ width: "260px" }}
                     onClick={async () => {
                         const filename = (title + "-" + name).replaceAll(' ', '-').replaceAll('.', '_');
@@ -37,6 +37,7 @@ export default function EditPage() {
                         await convertImage(divRef.current as HTMLElement, filename);
                         setloading(false)
                     }}>Save Poster</button>
+                    <div/>
             </div>
         </>
     )
