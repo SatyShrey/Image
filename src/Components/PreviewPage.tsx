@@ -1,18 +1,16 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useValues } from "./Global";
 import convertImage from "../utils/converter";
 import ErrorScreen from "./ErrorScreen";
 import { useState } from "react";
 import LoadingScreen from "./LoadingScreen";
 import frames from "../utils/frames";
-import { ChevronLeft } from "lucide-react";
 
 export default function EditPage() {
     const { id } = useParams()
-    const Item = frames[parseInt(id as string)];
     const { divRef, name, title } = useValues();
     const [loading, setloading] = useState(false);
-    const navigate = useNavigate();
+    const Item = frames[parseInt(id as string)];
 
     if (!Item) { return <ErrorScreen error="Frame not found" /> }
     if (loading) { return <LoadingScreen text="Saving file..." type="bar" /> }
@@ -24,12 +22,9 @@ export default function EditPage() {
                     <Item />
                 </div>
             </div>
-            <div className="p-1 bg-info text-center d-flex gap-2 justify-content-between">
-                <button className="d-flex align-items-center btn" onClick={() => navigate(-1)}>
-                    <ChevronLeft />Back
-                </button>
+            <div className="p-1 bg-primary text-center">
                 <button
-                    className="btn btn-primary fw-bold p-2"
+                    className="btn fw-bold text-light"
                     style={{ width: "260px" }}
                     onClick={async () => {
                         const filename = (title + "-" + name).replaceAll(' ', '-').replaceAll('.', '_');
@@ -37,7 +32,6 @@ export default function EditPage() {
                         await convertImage(divRef.current as HTMLElement, filename);
                         setloading(false)
                     }}>Save Poster</button>
-                    <div/>
             </div>
         </>
     )

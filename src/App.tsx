@@ -3,7 +3,6 @@ import Header from "./Components/Header";
 import Posters from "./Components/Posters";
 import EditPage from "./Components/PreviewPage";
 import EditDialog from "./Components/EditDialog";
-import SideNav from "./Components/SideNav";
 import BackgroundRemover from "./Components/BackgroundRemove";
 
 export default function App() {
@@ -16,7 +15,6 @@ export default function App() {
           <Route path="/edit/:id" element={<EditPage />} />
           <Route path="/remove-bg" element={<BackgroundRemover/>}/>
         </Routes>
-        <SideNav />
         <EditDialog />
       </BrowserRouter>
     </div>
