@@ -7,12 +7,18 @@ export default function Posters() {
       <div className="d-flex justify-content-around gap-1 flex-wrap my-1" >
         <h5 className="w-100 px-2 text-info">Select a frame</h5>
         {
-          frames.map((Item, index) => <Link
-            to={`/edit/${index}`}
+          frames.map((Item, index) => <div
             key={index}
-            className="pic-cover d-flex justify-content-center align-items-center overflow-hidden text-center text-decoration-none"
-          ><Item />
-          </Link>)
+            className="pic-cover position-relative d-flex justify-content-center align-items-center overflow-hidden text-center text-decoration-none"
+          >
+            <Item />
+            <Link
+              className="position-absolute"
+              style={{
+                top: 0, bottom: 0, left: 0, right: 0
+              }}
+              to={`/edit/${index}`} />
+          </div>)
         }
       </div>
     </div>
